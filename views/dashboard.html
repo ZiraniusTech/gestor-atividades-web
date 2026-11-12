@@ -1,0 +1,55 @@
+<div id="dashboardView" class="p-4 md:p-6">
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-3xl font-semibold text-text-main">Dashboard</h2>
+        <div id="currentDateTime" class="text-right">
+            <p class="text-xl text-text-main font-medium" id="timeDisplay"></p>
+            <p class="text-sm text-gray-500" id="dateDisplay"></p>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="#" data-view="calculator" class="sidebar-item tile items-center justify-center text-center">
+            <i class="fas fa-calculator tile-icon text-accent"></i>
+            <h3 class="text-lg font-semibold text-text-main">Calculadora de Diárias</h3>
+            <p class="text-sm text-gray-500 mt-1">Calcule as suas diárias de viagem.</p>
+        </a>
+        
+        <a href="#" data-view="agenda" class="sidebar-item tile md:col-span-2 lg:col-span-1">
+            <div class="flex items-center mb-3">
+                <i class="fas fa-calendar-check tile-icon text-accent mr-3 text-2xl"></i>
+                <h3 class="text-lg font-semibold text-text-main">Próximos Compromissos</h3>
+            </div>
+            <div id="proximosCompromissosList" class="space-y-2 text-sm max-h-48 overflow-y-auto pr-2">
+                </div>
+        </a>
+
+        <a href="#" data-view="settings" class="sidebar-item tile items-center justify-center text-center bg-sidebar-light text-white">
+             <i class="fas fa-cog tile-icon text-accent"></i>
+            <h3 class="text-lg font-semibold">Configurações</h3>
+            <p class="text-sm opacity-80 mt-1">Ajuste a tabela e regras de cálculo.</p>
+        </a>
+    </div>
+
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="tile">
+            <div class="flex items-center mb-3">
+                <i class="fas fa-gavel tile-icon text-accent mr-3 text-2xl"></i>
+                <h3 class="text-lg font-semibold text-text-main">Dica Rápida da NLLC</h3>
+            </div>
+            <div id="randomNllcQuestionWrapper">
+                <p id="randomNllcQuestionText" class="font-semibold text-gray-800 mb-2"></p>
+                <p id="randomNllcAnswerText" class="text-sm text-gray-600"></p>
+            </div>
+        </div>
+
+        <div class="tile">
+            <div class="flex items-center mb-3">
+                <i class="fas fa-user-shield tile-icon text-accent mr-3 text-2xl"></i>
+                <h3 class="text-lg font-semibold text-text-main">Dica Rápida da LGPD</h3>
+            </div>
+            <div id="randomLgpdQuestionWrapper">
+                <p id="randomLgpdQuestionText" class="font-semibold text-gray-800 mb-2"></p>
+                <p id="randomLgpdAnswerText" class="text-sm text-gray-600"></p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div id="nllcView" class="p-4 md:p-6">
+    <div class="content-card max-w-5xl mx-auto bg-gray-200">
+        <h2 class="text-2xl font-bold text-text-main mb-6">Consulta à NLLC 14.133/2021</h2>
+        
+        <div class="space-y-4">
+            <div>
+                <label for="nllc-select-main" class="block text-sm font-medium text-gray-700">Selecione a área:</label>
+                <select id="nllc-select-main" class="input-field"></select>
+            </div>
+
+            <div id="nllc-level2-container" class="hidden">
+                <label for="nllc-select-level2" class="block text-sm font-medium text-gray-700">Selecione o Título/Tema:</label>
+                <select id="nllc-select-level2" class="input-field"></select>
+            </div>
+
+            <div id="nllc-level3-container" class="hidden">
+                <label for="nllc-select-level3" class="block text-sm font-medium text-gray-700">Selecione o Capítulo/Pergunta:</label>
+                <select id="nllc-select-level3" class="input-field"></select>
+            </div>
+        </div>
+
+        <div class="mt-6 bg-white p-6 rounded-lg shadow-inner min-h-[50vh] border-2 border-accent">
+            <div id="nllc-content-display" class="prose max-w-none">
+                <p class="text-gray-500">Selecione uma opção nos menus para exibir o conteúdo aqui.</p>
+            </div>
+        </div>
+        
+        <div class="mt-6 flex justify-end">
+            <button id="printNllcButton" class="btn btn-primary hidden no-print">
+                <i class="fas fa-print mr-2"></i>Imprimir Secção
+            </button>
+        </div>
+    </div>
+</div>

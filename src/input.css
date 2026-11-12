@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-main-bg text-text-main;
+        font-family: 'Inter', system-ui, sans-serif;
+    }
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type='number'] {
+        -moz-appearance: textfield;
+    }
+
+    /* --- ESTILOS PARA TABELAS DENTRO DO CONTEÚDO DA NLLC --- */
+    /* O plugin @tailwindcss/typography aplica a classe .prose ao container do conteúdo. */
+    /* Aqui, estamos a melhorar os estilos padrão do plugin para as tabelas. */
+    .prose table {
+        @apply w-full my-6 border-collapse rounded-lg overflow-hidden shadow-lg; /* Cantos arredondados e sombra mais forte */
+    }
+    .prose th, .prose td {
+        @apply border border-gray-200 px-4 py-3 text-left align-top; /* Bordas subtis e elegantes */
+    }
+    .prose thead {
+        @apply bg-sidebar; /* Usa a cor de fundo da sidebar (preto fosco/azul escuro) */
+    }
+    .prose thead th {
+        @apply font-semibold text-accent; /* Usa a cor de destaque (azul turquesa) para o texto do cabeçalho */
+    }
+    .prose tbody tr:nth-child(even) {
+        @apply bg-gray-50; /* Linha de cor ligeiramente diferente para legibilidade */
+    }
+    .prose tbody tr:nth-child(odd) {
+        @apply bg-white; /* Fundo branco para contraste */
+    }
+    .prose tbody tr:hover {
+        @apply bg-blue-50; /* Efeito visual ao passar o rato por cima da linha */
+    }
+}
+
+@layer components {
+    /* --- Layout Principal --- */.tile-icon
+    #sidebar {
+        @apply bg-sidebar text-text-light;
+    }
+    .sidebar-item {
+        @apply text-text-light hover:bg-sidebar-light rounded-md;
+    }
+    .sidebar-item.active {
+        @apply bg-sidebar-light text-white font-semibold;
+    }
+    .sidebar-item.active .sidebar-icon {
+        @apply text-accent;
+    }
+    .content-card {
+        @apply bg-card-bg p-6 md:p-8 rounded-xl shadow-lg;
+    }
+    /* Dentro de @layer components */
+    .input-field {
+        @apply mt-1 block w-full px-3 py-2 bg-card-bg border-2 border-accent rounded-md shadow-sm focus:outline-none focus:ring-accent sm:text-sm;
+    }
+
+    /* --- Botões --- */
+    .btn {
+        @apply inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-150;
+    }
+    .btn-primary {
+        @apply bg-accent hover:bg-accent-hover focus:ring-accent;
+    }
+    .btn-secondary {
+        @apply bg-gray-500 hover:bg-gray-600 focus:ring-gray-500;
+    }
+    .btn-danger {
+        @apply bg-red-600 hover:bg-red-700 focus:ring-red-500;
+    }
+    .btn-success {
+        @apply bg-green-600 hover:bg-green-700 focus:ring-green-500;
+    }
+    .btn-warning {
+        @apply bg-yellow-500 hover:bg-yellow-600 focus:ring-yellow-400;
+    }
+
+    /* --- Componentes Específicos --- */
+    .tile {
+        @apply bg-card-bg rounded-xl p-6 shadow-lg transition-all duration-200 ease-in-out cursor-pointer flex flex-col;
+    }
+    .tile:hover {
+        @apply transform -translate-y-1 shadow-xl;
+    }
+    .tile-icon {
+        @apply text-3xl mb-3;
+    }
+    .editable-table th {
+        @apply bg-gray-50;
+    }
+}
+
+/* Camada de Utilitários e Impressão (sem alterações de cor) */
+@layer utilities {
+    html, body { @apply overflow-hidden h-full; }
+    #app-wrapper { @apply h-screen flex flex-col; }
+    #main-layout { @apply flex flex-grow overflow-hidden; }
+    #main-content-area { @apply flex-grow overflow-y-auto; }
+    #sidebar { min-width: 260px; width: 260px; @apply overflow-y-auto; }
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    body, #print-section {
+        visibility: visible;
+        width: 100%;
+        height: auto;
+    }
+    #main-layout, #sidebar, #main-content-area {
+        display: none;
+    }
+    #print-section {
+        display: block !important;
+    }
+    .print-container {
+        padding: 2rem;
+        font-family: sans-serif;
+    }
+    .print-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .print-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+    }
+    .print-table td {
+        border: 1px solid #ccc;
+        padding: 8px;
+    }
+    .print-footer {
+        text-align: right;
+        font-size: 0.8rem;
+        color: #555;
+    }
+}

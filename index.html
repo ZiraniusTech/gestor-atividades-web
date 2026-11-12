@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAV Diárias - Gestor de Atividades</title>
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <link href="./assets/fontawesome/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-main-bg font-sans">
+
+    <div id="app-wrapper">
+        <div id="main-layout" class="h-screen">
+            <aside id="sidebar" class="shadow-lg flex flex-col no-print">
+                <div class="p-6 border-b border-gray-700 flex flex-col items-center">
+                    <img src="4.JPG" alt="Logo" class="h-12 mb-2" onerror="this.style.display='none'"/>
+                    <h1 class="text-2xl font-bold text-accent whitespace-nowrap">Gestor de Atividades</h1>
+                </div>
+                <nav class="flex-grow p-4 space-y-2">
+                    <a href="#" data-view="dashboard" class="sidebar-item active flex items-center py-2.5 px-4">
+                        <i class="fas fa-tachometer-alt w-5 h-5 mr-3 sidebar-icon"></i> Dashboard
+                    </a>
+                    <a href="#" data-view="calculator" class="sidebar-item flex items-center py-2.5 px-4">
+                        <i class="fas fa-calculator w-5 h-5 mr-3 sidebar-icon"></i> Calculadora
+                    </a>
+                    <a href="#" data-view="agenda" class="sidebar-item flex items-center py-2.5 px-4">
+                        <i class="fas fa-calendar-alt w-5 h-5 mr-3 sidebar-icon"></i> Agenda
+                    </a>
+                    <a href="#" data-view="nllc" class="sidebar-item flex items-center py-2.5 px-4">
+                        <i class="fas fa-gavel w-5 h-5 mr-3 sidebar-icon"></i> NLLC 14.133
+                    </a>
+
+                    <a href="#" data-view="lgpd" class="sidebar-item flex items-center py-2.5 px-4">
+                        <i class="fas fa-user-shield w-5 h-5 mr-3 sidebar-icon"></i> LGPD
+                    </a>
+                    <a href="#" data-view="ajuda" class="sidebar-item flex items-center py-2.5 px-4">
+                        <i class="fas fa-question-circle w-5 h-5 mr-3 sidebar-icon"></i> Posso Ajudar?
+                    </a>
+                    <a href="#" data-view="settings" class="sidebar-item flex items-center py-2.5 px-4">
+                        <i class="fas fa-cog w-5 h-5 mr-3 sidebar-icon"></i> Configurações
+                    </a>
+                </nav>
+                <div class="p-4 mt-auto border-t border-gray-700">
+                    <p class="text-xs text-text-light text-center">ZiraniusTec!, - Software de Gestão de atividades - Versão 7.0</p>
+                </div>
+            </aside>
+
+            <main id="main-content-area" class="flex-1 flex flex-col"></main>
+        </div>
+    </div>
+
+    <div id="confirmationModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-sm"><h3 id="modalTitle" class="text-lg font-bold text-gray-800 mb-4">Confirmar Ação</h3><p id="modalMessage" class="text-gray-600 mb-6">Tem certeza?</p><div class="flex justify-end space-x-4"><button id="modalCancelButton" class="px-4 py-2 bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400">Cancelar</button><button id="modalConfirmButton" class="btn btn-danger">Confirmar</button></div></div>
+    </div>
+    <div id="toastContainer" class="fixed top-5 right-5 z-50 space-y-2"></div>
+    <div id="print-section" class="hidden"></div>
+
+    <script src="./assets/js/app.js" type="module" defer></script>
+</body>
+</html>

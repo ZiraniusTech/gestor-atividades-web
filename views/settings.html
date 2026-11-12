@@ -1,0 +1,29 @@
+<div id="settingsView" class="p-4 md:p-6">
+    <div class="content-card max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-700 mb-6">Configurações</h2>
+        <div class="content-card border border-gray-200 mb-6">
+             <h3 class="text-xl font-semibold text-gray-700 mb-4">Cálculo de Diárias</h3>
+             <div>
+                <label for="horasMeiaDiariaSelect" class="block text-sm font-medium text-gray-700">Horas mínimas para Meia Diária:</label>
+                <select id="horasMeiaDiariaSelect" class="input-field md:w-1/2">
+                    <option value="8">8 horas</option>
+                    <option value="12">12 horas</option>
+                </select>
+             </div>
+        </div>
+        <div class="content-card border border-gray-200">
+            <h3 class="text-xl font-semibold text-gray-700 mb-4">Tabela de Valores de Diária (R$)</h3>
+            <div class="overflow-x-auto">
+                <table id="editableDiariasTableInSettings" class="editable-table">
+                    <thead><tr></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <button id="restoreDefaultTableButton" class="btn btn-warning mt-4">Restaurar Tabela Padrão</button>
+        </div>
+        <div class="mt-6 flex justify-end space-x-3">
+            <button id="cancelSettingsButton" class="btn btn-secondary">Fechar</button>
+            <button id="saveSettingsButton" class="btn btn-primary">Salvar Configurações</button>
+        </div>
+    </div>
+</div>
